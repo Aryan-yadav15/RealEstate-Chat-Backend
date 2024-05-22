@@ -12,7 +12,8 @@ router.put("/test",(req,res)=>{
     console.log("i am workinghere")
 })
 router.delete("/test",(req,res)=>{
-    console.log("i am workinghere")
+    console.log("i  workinghere")
 })
 
 export default router
+
