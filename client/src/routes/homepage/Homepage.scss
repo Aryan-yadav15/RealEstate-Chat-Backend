@@ -1,0 +1,83 @@
+@import "../../responsive.scss";
+
+.homepage{
+    display: flex;
+    .textContainer{
+        flex:3;
+        .wrapper{
+            padding-right: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 50px;
+            padding-top: 100px;
+            height: 100%;
+            .title{
+                font-size: 64px;
+                @include lg{
+                    font-size: 48px;
+                }
+            }
+            .searchHolder{
+                display: flex;
+                flex-direction: column;
+                gap: 80px;
+                .boxes{
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 50px;
+                    .box{
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                        @include sm{
+                            display: none;
+                        }
+                        h1{
+                            font-size: 32px;
+                        }
+                        h2{
+                            font-size: 20px;
+                            font-weight: 300;
+                        }
+                        .boxTitle{
+                            font-size: 24px;
+                            @include lg{
+                                font-size: 20px;
+                            }
+                        }
+                        .boxText{
+                            font-size: 16px;
+                            @include lg{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+
+    }
+    .imgContainer{
+        flex:2;
+        background-color: #fcf5f3; 
+        position: relative;
+        display: flex;
+        align-items: center;
+        
+        @include md{
+            display: none;
+        }
+
+        img{
+            width: 115%;
+            position: absolute;
+            right: 0;
+            @include lg{
+                width: 100%;
+            }
+        }
+    }
+}

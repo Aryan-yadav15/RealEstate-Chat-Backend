@@ -1,18 +1,22 @@
 import express from "express"
+import cors from "cors"
 import cookieParser from "cookie-parser"
 import postRroute from "./routes/post.route.js"
 import authRoute from "./routes/auth.route.js"
+import testRoute from "./routes/test.route.js"
 
 const app = express()
 
 console.log("test1")
 console.log("test2")
 
+app.use(cors({ origin: process.env.CLIENT_URL,credentials:true })); // Allow requests from this origin
 app.use(express.json())
 app.use(cookieParser())
 
 app.use("/api/post", postRroute)
 app.use("/api/auth", authRoute)
+app.use("/api/test", testRoute)
 
 
 // app.use('/api/test',(req,res)=>{

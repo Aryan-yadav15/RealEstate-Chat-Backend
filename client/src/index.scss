@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    overflow-x: hidden; /* Hide vertical scrollbar */
+    overflow-y: auto; 
+}

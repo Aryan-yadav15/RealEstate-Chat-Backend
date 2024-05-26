@@ -63,6 +63,7 @@ export const login = async (req, res) => {
 
         const token = jwt.sign({
             id: user.id,
+            isAdmin: true
         }, process.env.JWT_SECRET_KEY,
             {
                 expiresIn: age
@@ -70,11 +71,14 @@ export const login = async (req, res) => {
         )
         //we are sending this token to the user becasues if the user tries to delete a post we can chack the id by decoding the token 
 
+        const {password:userPassword,...userInfo} = user
+
+
         res.cookie("token", token, {
             httpOnly: true,
             // secure:true,
             maxAge: age
-        }).status(200).json({ message: "Login sucess" })
+        }).status(200).json(userInfo)
 
     } catch (error) {
         console.error(error);
